@@ -1,0 +1,33 @@
+{% block main_content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style= 'background-image:url("http://orig06.deviantart.net/cc74/f/2015/025/2/d/material_design_wallpaper_2__selfmade__by_pattipartypony-d8ej76v.png");color:black;font-size:30pt'>
+
+
+<h1 align="center" style="font-size:50pt; color:white;"> Cattle Name : Ramu </h1><hr>
+{% for ram in ramu_detail %}
+    Name : {{ram.name}}<br>
+    Age : {{ram.age}}<br>
+    Location : {{ram.location}}<br>
+    Gender : {{ram.sex}}<br>
+    Arrival : {{ram.arrival}}<br>
+    Project: {{ram.under}}<br>
+{% endfor %}
+<hr>
+<form method="POST" action="/" style="float:left">
+   <br> <input type="submit" value="Back Home" style="background-color:gray; height:50px;width:200px; font-size:20pt; color:black">
+    {% csrf_token %}
+</form>
+<form method="POST" action="/fulldetail/" style="float:right">
+   <br> <input type="submit" value="Next Cattle" style="background-color:gray; height:50px;width:200px; font-size:20pt; color:black">
+    {% csrf_token %}
+</form>
+</body>
+{% endblock %}
+
+</html>

@@ -1,0 +1,37 @@
+{% block main_content %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body style="color:white; background-image: url('https://onepagelove.com/wp-content/uploads/2014/11/opl-big4.jpg');">
+<h1 style="color:white; font-size:50pt" align="center"> Details Of Cattles Present At Farm </h1><hr size="10" color="grey"><br>
+
+<form method="POST" action="fulldetail/"  style="color:white; font-size:20pt;" >
+
+      {% for log_detail in logs %}
+        Name      : {{ log_detail.name }}<br>
+        Gender       : {{ log_detail.sex }}<br>
+        Location  : {{ log_detail.location }}<br><br><hr color="grey"><br>
+        <br>
+
+      {% endfor %}
+    <h6 style="color:grey"> copyrighted under srj_technologies </h6>
+
+    <hr color="grey">
+    <h4 align="center" style="font-size:30pt"> For further details click on the name of the cattle </h4>
+    <input type="submit" value="Janu" style="background-color:gray; height:50px;width:200px;font-size:30;color:white"><br>
+    {% csrf_token %}
+
+</form>
+<hr>
+<form method="POST" action="ramudetail/">
+   <br> <input type="submit" value="Ramu" style="background-color:gray; height:50px;width:200px; font-size:30; color:white"><br>
+    {% csrf_token %}
+
+</form>
+{% endblock %}
+</body>
+</html>
